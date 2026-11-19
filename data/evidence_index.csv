@@ -1,0 +1,977 @@
+evidence_id,file_name,relative_path,locator,available_from_ist,evidence_text
+EV-95F741BC-001,Candidate_Brief.docx,Day1_Mon_16Nov/brief/Candidate_Brief.docx,document,2026-11-16T10:00:00+05:30,"Candidate_Brief.docx
+Veloxa CXO Cockpit: Candidate Brief
+The ask
+A note from Ananya Rao, CEO of Veloxa Technologies (a 180-person B2B SaaS company in Bengaluru):
+I run this company mostly on gut and on whoever reaches my inbox first. I want one place where I can ask a question about the company and get a straight answer: what each team is actually doing, where we are stuck, and what I should worry about. I don't want another dashboard nobody opens.
+Build it on a version of Veloxa I can test: start with 14 people across engineering, finance, HR and marketing, and make them feel like real colleagues with real lives, not spreadsheet rows. IT will hand you exports from our systems; they're the best record we have, but they're not clean.
+I won't have time to meet you. My assistant recorded a few of my calls with the leadership team; you'll get the auto-generated summaries as they come in. The transcription tool isn't great, and my team doesn't always agree with each other or with me. You have 10 working days.
+What you get, and what you don't
+You will not meet the CEO or any leader. You learn about Veloxa from two kinds of source, released over the first week: call transcripts and system exports. When they disagree, it's your job to work out which to believe.
+Transcripts are machine-generated: names, tools and numbers may be misheard, and speakers may be wrong or biased. The exports are better but have quirks of their own. Some things that look like mistakes aren't. Nobody will confirm which is which.
+Rules of engagement
+AI is allowed, and expected. Use any assistant you like. You will be judged on the decisions you make with it and on explaining your system without it.
+Requirements arrive over time. New transcripts and voice notes add, change and contradict what you know. Plan for change, not a frozen spec.
+Live sessions. Reviews on days 2, 4 and 8 (show what runs; expect to make a change live and explain it). On day 6, a 30-minute whiteboard session with no screen: draw your data model and walk through three conflicts you resolved. On day 10, a 60-minute final.
+ASSUMPTIONS.md. Date, what you assumed, the source line it rests on, confidence, what would change your mind. Update entries when they're proved wrong; don't delete them.
+TRANSCRIPT_NOTES.md. Everything you think was misheard or contradicts another source, the evidence you used, and what you concluded.
+DECISIONS.md. Choices you could defend either way: data model, storage, agent memory, what the cockpit refuses to answer.
+Commit daily with messages a teammate could follow. We read the history. Code freezes at the end of day 9.
+Scope
+Must have
+The data room loaded into a data model you design, reconciled with the transcripts.
+The 14 people as AI agents you can interview, grounded in the data. Where the data is silent (their lives, their private thoughts), invent it and log it as an assumption.
+A cockpit where the CEO asks one question and gets a short answer that cites the records behind it, plus a ""what should I worry about"" view.
+A response to every CEO voice note as it arrives: a change, or a written pushback.
+Stretch
+Agents that keep living after 31 Oct 2026 and generate new activity day by day.
+""What did we know on date X?"" questions.
+An automated test set for the cockpit's answers.
+What we look at
+Working code matters, but judgement matters more. In rough order of weight:
+The live sessions: can you explain and change your own system without help?
+Whether the cockpit's answers are true against the data room, cite their sources, and admit what they don't know.
+How you read the sources: what you trusted, what you doubted, and the evidence for each.
+Your logs, especially entries you revised.
+How you handled change, including requests you pushed back on.
+Whether the 14 people feel real, and the code: readable, one-command setup.
+There is no single right solution. Doing the must-haves well beats doing everything badly.
+TABLE 1
+You get | You don't get
+A data room of exports from Veloxa's systems, in three drops (days 1, 3 and 4) | A schema, a data dictionary, or a list of which export is right
+Auto-generated summaries of leadership calls and CEO voice notes, released on days we choose | Live time with the CEO or leadership, or corrections when a transcript is wrong
+Three 30-minute reviews, one whiteboard session and a final session with a reviewer (not a stakeholder; won't answer business questions) | The questions the CEO will ask in the final
+Any AI tools you like | A tech stack"
+EV-4C720F8E-001,README.txt,Day1_Mon_16Nov/data_room/README.txt,section:1,2026-11-16T10:00:00+05:30,"README.txt, section 1
+Veloxa data room. Exported by IT on 31 Oct 2026."
+EV-4C720F8E-002,README.txt,Day1_Mon_16Nov/data_room/README.txt,section:2,2026-11-16T10:00:00+05:30,"README.txt, section 2
+hr/          Keka HRMS, leave register, Culture Amp pulse, Keka Hire tracker
+finance/     Zoho Books general ledger, payroll register
+engineering/ Jira (ATLAS), git history, PagerDuty, on-call rota
+documents/   board updates, invoices, letters, launch kit
+email/       selected email threads (.eml) and a printable copy
+templates/   worksheets for your own use"
+EV-08ABD051-001,Board_Update_Apr-Jun_2026.pdf,Day1_Mon_16Nov/data_room/documents/Board_Update_Apr-Jun_2026.pdf,page:1,2026-11-16T10:00:00+05:30,"Board_Update_Apr-Jun_2026.pdf, page 1
+Veloxa Technologies: Board update
+Quarterly update. Period: Apr to Jun 2026. Sent 8 Jul 2026. Confidential.
+Key numbers
+Metric
+Value
+ARR (recurring)
+Rs. 5.8 Cr
+Customers
+61
+Team
+19
+Monthly burn
+Rs. 46 L
+Runway
+14 months
+Product
+Atlas (routing engine v3) is on track for GA on 15 September. Real-time re-routing is the headline feature
+customers have asked for. Launch materials are in preparation.
+Team
+We will add two backend engineers this quarter to de-risk Atlas. Search is underway.
+Asks
+Introductions to logistics CXOs for the September summit.
+"
+EV-6E1D3594-001,Board_Update_Jul-Sep_2026.pdf,Day1_Mon_16Nov/data_room/documents/Board_Update_Jul-Sep_2026.pdf,page:1,2026-11-16T10:00:00+05:30,"Board_Update_Jul-Sep_2026.pdf, page 1
+Veloxa Technologies: Board update
+Quarterly update. Period: Jul to Sep 2026. Sent 6 Oct 2026. Confidential.
+Key numbers
+Metric
+Value
+ARR (recurring)
+Rs. 6.1 Cr
+Customers
+66
+Team
+19
+Monthly burn
+Rs. 44 L
+Runway
+13 months
+Product
+Atlas is in final hardening. We moved GA to absorb unplanned reliability work after a difficult August; the
+engine itself is feature-complete.
+Team
+Hiring is paused while we close the round. One planned departure in marketing.
+Marketing
+The Logistics Summit drew 212 registrations, our biggest event yet.
+"
+EV-F9D7F631-001,01.eml,Day1_Mon_16Nov/data_room/email/01.eml,section:1,2026-11-16T10:00:00+05:30,"01.eml, section 1
+From: Karthik Subramanian <karthik.s@veloxa.in>
+To: Meera Iyer <meera@veloxa.in>
+Date: Sat, 28 Feb 2026 20:15:00 +0530
+Subject: Feb payroll done
+Meera,"
+EV-F9D7F631-002,01.eml,Day1_Mon_16Nov/data_room/email/01.eml,section:2,2026-11-16T10:00:00+05:30,"01.eml, section 2
+Ran Feb payroll since Fatima is out. Used the Jan sheet and added the new joiner.
+Totals attached in the register."
+EV-F9D7F631-003,01.eml,Day1_Mon_16Nov/data_room/email/01.eml,section:3,2026-11-16T10:00:00+05:30,"01.eml, section 3
+Karthik"
+EV-016DF602-001,02.eml,Day1_Mon_16Nov/data_room/email/02.eml,section:1,2026-11-16T10:00:00+05:30,"02.eml, section 1
+From: Rahul Verma <rahul.v@veloxa.in>
+To: Fatima Sheikh <fatima@veloxa.in>
+Date: Fri, 06 Mar 2026 11:02:00 +0530
+Subject: payslip query
+Hi Fatima, small query on my first payslip. The amount looks higher than what I expected for a
+partial month. Is that right?"
+EV-016DF602-002,02.eml,Day1_Mon_16Nov/data_room/email/02.eml,section:2,2026-11-16T10:00:00+05:30,"02.eml, section 2
+Rahul"
+EV-2BE02D0B-001,03.eml,Day1_Mon_16Nov/data_room/email/03.eml,section:1,2026-11-16T10:00:00+05:30,"03.eml, section 1
+From: Fatima Sheikh <fatima@veloxa.in>
+To: Rahul Verma <rahul.v@veloxa.in>
+Date: Tue, 10 Mar 2026 15:40:00 +0530
+Subject: Re: payslip query
+Will check and get back."
+EV-2BE02D0B-002,03.eml,Day1_Mon_16Nov/data_room/email/03.eml,section:2,2026-11-16T10:00:00+05:30,"03.eml, section 2
+Fatima"
+EV-B4A42D8F-001,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:header,2026-11-16T10:00:00+05:30,Workbook GL_Export_Apr-Sep_2026.xlsx; sheet GL Apr-Sep; header row 3: Txn Date | Voucher | Vendor / Payee | Ref | Cost Centre | Amount (Rs.) | Narration | Entered By
+EV-B4A42D8F-008,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:10,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 10
+Txn Date=2026-05-31; Voucher=RENT-MAY; Vendor / Payee=WeWork India; Ref=WW-0526; Cost Centre=G&A; Amount (Rs.)=236000; Narration=Office rent, May; Entered By=FS"
+EV-B4A42D8F-009,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:11,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 11
+Txn Date=2026-06-04; Voucher=JV-0603; Vendor / Payee=Google India Pvt Ltd; Ref=GADS-0526; Cost Centre=MKT-PS; Amount (Rs.)=81420; Narration=Google Ads; Entered By=FS"
+EV-B4A42D8F-010,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:12,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 12
+Txn Date=2026-06-08; Voucher=JV-0621; Vendor / Payee=Amazon Web Services; Ref=AWS-0626; Cost Centre=ENG-INF; Amount (Rs.)=205900; Narration=AWS, previous month; Entered By=FS"
+EV-B4A42D8F-011,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:13,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 13
+Txn Date=2026-06-28; Voucher=PAY-JUN; Vendor / Payee=Salaries (payroll); Ref=PR-Jun26; Cost Centre=PAYROLL; Amount (Rs.)=3175000; Narration=Salaries, Jun; Entered By=FS"
+EV-B4A42D8F-012,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:14,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 14
+Txn Date=2026-06-30; Voucher=RENT-JUN; Vendor / Payee=WeWork India; Ref=WW-0626; Cost Centre=G&A; Amount (Rs.)=236000; Narration=Office rent, Jun; Entered By=FS"
+EV-B4A42D8F-013,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:15,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 15
+Txn Date=2026-06-30; Voucher=JV-0688; Vendor / Payee=Cohere Recruiting Partners; Ref=CRP-0412; Cost Centre=PPL-HIR; Amount (Rs.)=177000; Narration=Search fee, 2 backend roles (50% advance); Entered By=FS"
+EV-B4A42D8F-014,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:16,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 16
+Txn Date=2026-07-04; Voucher=JV-0703; Vendor / Payee=Google India Pvt Ltd; Ref=GADS-0626; Cost Centre=MKT-PS; Amount (Rs.)=94400; Narration=Google Ads; Entered By=FS"
+EV-B4A42D8F-015,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:17,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 17
+Txn Date=2026-07-08; Voucher=JV-0721; Vendor / Payee=Amazon Web Services; Ref=AWS-0726; Cost Centre=ENG-INF; Amount (Rs.)=212480; Narration=AWS, previous month; Entered By=FS"
+EV-B4A42D8F-016,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:18,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 18
+Txn Date=2026-07-28; Voucher=PAY-JUL; Vendor / Payee=Salaries (payroll); Ref=PR-Jul26; Cost Centre=PAYROLL; Amount (Rs.)=3175000; Narration=Salaries, Jul; Entered By=FS"
+EV-B4A42D8F-017,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:19,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 19
+Txn Date=2026-07-31; Voucher=RENT-JUL; Vendor / Payee=WeWork India; Ref=WW-0726; Cost Centre=G&A; Amount (Rs.)=236000; Narration=Office rent, Jul; Entered By=FS"
+EV-B4A42D8F-018,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:20,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 20
+Txn Date=2026-08-04; Voucher=JV-0803; Vendor / Payee=Google India Pvt Ltd; Ref=GADS-0726; Cost Centre=MKT-PS; Amount (Rs.)=88500; Narration=Google Ads; Entered By=FS"
+EV-B4A42D8F-019,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:21,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 21
+Txn Date=2026-08-08; Voucher=JV-0821; Vendor / Payee=Amazon Web Services; Ref=AWS-0826; Cost Centre=ENG-INF; Amount (Rs.)=219830; Narration=AWS, previous month; Entered By=FS"
+EV-B4A42D8F-020,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:22,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 22
+Txn Date=2026-08-28; Voucher=PAY-AUG; Vendor / Payee=Salaries (payroll); Ref=PR-Aug26; Cost Centre=PAYROLL; Amount (Rs.)=3175000; Narration=Salaries, Aug; Entered By=FS"
+EV-B4A42D8F-021,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:23,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 23
+Txn Date=2026-08-29; Voucher=JV-0846; Vendor / Payee=Sapphire Events Pvt Ltd; Ref=INV-2291; Cost Centre=MKT-EVT; Amount (Rs.)=542800; Narration=Summit: venue, AV; Entered By=FS"
+EV-B4A42D8F-022,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:24,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 24
+Txn Date=2026-08-31; Voucher=RENT-AUG; Vendor / Payee=WeWork India; Ref=WW-0826; Cost Centre=G&A; Amount (Rs.)=236000; Narration=Office rent, Aug; Entered By=FS"
+EV-B4A42D8F-023,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:25,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 25
+Txn Date=2026-09-02; Voucher=JV-0902; Vendor / Payee=Patil Infra Services; Ref=PIS-108; Cost Centre=ENG-OPS; Amount (Rs.)=70800; Narration=On-call support, 18-31 Aug; Entered By=FS"
+EV-B4A42D8F-024,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:26,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 26
+Txn Date=2026-09-03; Voucher=JV-0904; Vendor / Payee=Saphire Event Mgmt; Ref=SEM-0087; Cost Centre=MKT-EVT; Amount (Rs.)=460200; Narration=Catering etc.; Entered By=FS"
+EV-B4A42D8F-025,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:27,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 27
+Txn Date=2026-09-04; Voucher=JV-0903; Vendor / Payee=Google India Pvt Ltd; Ref=GADS-0826; Cost Centre=MKT-PS; Amount (Rs.)=82600; Narration=Google Ads; Entered By=FS"
+EV-B4A42D8F-026,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:28,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 28
+Txn Date=2026-09-08; Voucher=JV-0921; Vendor / Payee=Amazon Web Services; Ref=AWS-0926; Cost Centre=ENG-INF; Amount (Rs.)=248310; Narration=AWS, previous month; Entered By=FS"
+EV-B4A42D8F-027,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:29,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 29
+Txn Date=2026-09-11; Voucher=JV-0918; Vendor / Payee=Sapphire Residency Hotel; Ref=SRH/26/4471; Cost Centre=SAL-TRV; Amount (Rs.)=38940; Narration=Sales offsite; Entered By=FS"
+EV-B4A42D8F-028,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:30,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 30
+Txn Date=2026-09-28; Voucher=PAY-SEP; Vendor / Payee=Salaries (payroll); Ref=PR-Sep26; Cost Centre=PAYROLL; Amount (Rs.)=3175000; Narration=Salaries, Sep; Entered By=FS"
+EV-B4A42D8F-029,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:31,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 31
+Txn Date=2026-09-30; Voucher=RENT-SEP; Vendor / Payee=WeWork India; Ref=WW-0926; Cost Centre=G&A; Amount (Rs.)=236000; Narration=Office rent, Sep; Entered By=FS"
+EV-B4A42D8F-002,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:4,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 4
+Txn Date=2026-04-08; Voucher=JV-0421; Vendor / Payee=Amazon Web Services; Ref=AWS-0426; Cost Centre=ENG-INF; Amount (Rs.)=181200; Narration=AWS, previous month; Entered By=FS"
+EV-B4A42D8F-003,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:5,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 5
+Txn Date=2026-04-28; Voucher=PAY-APR; Vendor / Payee=Salaries (payroll); Ref=PR-Apr26; Cost Centre=PAYROLL; Amount (Rs.)=3175000; Narration=Salaries, Apr; Entered By=FS"
+EV-B4A42D8F-004,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:6,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 6
+Txn Date=2026-04-30; Voucher=RENT-APR; Vendor / Payee=WeWork India; Ref=WW-0426; Cost Centre=G&A; Amount (Rs.)=236000; Narration=Office rent, Apr; Entered By=FS"
+EV-B4A42D8F-005,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:7,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 7
+Txn Date=2026-05-04; Voucher=JV-0503; Vendor / Payee=Google India Pvt Ltd; Ref=GADS-0426; Cost Centre=MKT-PS; Amount (Rs.)=76700; Narration=Google Ads; Entered By=FS"
+EV-B4A42D8F-006,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:8,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 8
+Txn Date=2026-05-08; Voucher=JV-0521; Vendor / Payee=Amazon Web Services; Ref=AWS-0526; Cost Centre=ENG-INF; Amount (Rs.)=190450; Narration=AWS, previous month; Entered By=FS"
+EV-B4A42D8F-007,GL_Export_Apr-Sep_2026.xlsx,Day1_Mon_16Nov/data_room/finance/GL_Export_Apr-Sep_2026.xlsx,sheet:GL Apr-Sep:row:9,2026-11-16T10:00:00+05:30,"GL_Export_Apr-Sep_2026.xlsx | sheet GL Apr-Sep | Excel row 9
+Txn Date=2026-05-28; Voucher=PAY-MAY; Vendor / Payee=Salaries (payroll); Ref=PR-May26; Cost Centre=PAYROLL; Amount (Rs.)=3175000; Narration=Salaries, May; Entered By=FS"
+EV-0B661061-001,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:header,2026-11-16T10:00:00+05:30,Workbook Employee_Master.xlsx; sheet Employees; header row 3: Emp ID | Full Name | Work Email | Department | Title | Manager ID | Join Date | Location | Status | Exit Date
+EV-0B661061-008,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:10,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 10
+Emp ID=VX007; Full Name=Priya Nair; Work Email=priya.n@veloxa.in; Department=Engineering; Title=Staff Engineer; Manager ID=VX004; Join Date=2022-03-14; Location=Bengaluru; Status=Active"
+EV-0B661061-009,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:11,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 11
+Emp ID=VX008; Full Name=Divya Reddy; Work Email=divya@veloxa.in; Department=Sales; Title=Account Executive; Manager ID=VX002; Join Date=2024-01-15; Location=Hyderabad; Status=Active"
+EV-0B661061-010,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:12,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 12
+Emp ID=VX009; Full Name=Arjun Das; Work Email=arjun@veloxa.in; Department=Engineering; Title=Senior Frontend Engineer; Manager ID=VX004; Join Date=2023-05-08; Location=Pune (remote); Status=Active"
+EV-0B661061-011,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:13,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 13
+Emp ID=VX010; Full Name=Karthik Subramanian; Work Email=karthik.s@veloxa.in; Department=Finance; Title=FP&A Manager; Manager ID=VX003; Join Date=2024-10-01; Location=Bengaluru; Status=Active"
+EV-0B661061-012,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:14,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 14
+Emp ID=VX011; Full Name=Aisha Khan; Work Email=aisha@veloxa.in; Department=Marketing; Title=Performance Marketing Manager; Manager ID=VX006; Join Date=2023-08-21; Location=Bengaluru; Status=Active"
+EV-0B661061-013,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:15,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 15
+Emp ID=VX012; Full Name=Sneha Kulkarni; Work Email=sneha.k@veloxa.in; Department=Engineering; Title=Site Reliability Engineer; Manager ID=VX004; Join Date=2024-11-04; Location=Bengaluru; Status=Active"
+EV-0B661061-014,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:16,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 16
+Emp ID=VX013; Full Name=Siddharth Mehta; Work Email=sid@veloxa.in; Department=Marketing; Title=Product Marketing Manager; Manager ID=VX006; Join Date=2025-04-07; Location=Bengaluru; Status=Notice period; Exit Date=2026-10-31"
+EV-0B661061-015,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:17,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 17
+Emp ID=VX014; Full Name=Fatima Sheikh; Work Email=fatima@veloxa.in; Department=Finance; Title=Accounts & Payroll Executive; Manager ID=VX003; Join Date=2025-05-12; Location=Bengaluru; Status=Active"
+EV-0B661061-016,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:18,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 18
+Emp ID=VX015; Full Name=Rohan Banerjee; Work Email=rohan@veloxa.in; Department=People & Ops; Title=Talent Partner; Manager ID=VX005; Join Date=2024-06-03; Location=Kolkata (remote); Status=Active"
+EV-0B661061-017,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:19,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 19
+Emp ID=VX016; Full Name=Imran Siddiqui; Work Email=imran@veloxa.in; Department=Support; Title=Customer Support Lead; Manager ID=VX001; Join Date=2023-02-13; Location=Bengaluru; Status=Active"
+EV-0B661061-018,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:20,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 20
+Emp ID=VX017; Full Name=Lakshmi Pillai; Work Email=lakshmi.p@veloxa.in; Department=People & Ops; Title=HR & Office Executive; Manager ID=VX005; Join Date=2025-10-06; Location=Bengaluru; Status=Active"
+EV-0B661061-019,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:21,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 21
+Emp ID=VX018; Full Name=Rahul Verma; Work Email=rahul.v@veloxa.in; Department=Engineering; Title=Backend Engineer; Manager ID=VX004; Join Date=2026-02-03; Location=Bengaluru; Status=Active"
+EV-0B661061-020,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:22,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 22
+Emp ID=VX019; Full Name=Kavya Narayan; Work Email=kavya@veloxa.in; Department=Support; Title=Support Associate; Manager ID=VX016; Join Date=2025-07-01; Location=Bengaluru; Status=Active"
+EV-0B661061-002,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:4,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 4
+Emp ID=VX001; Full Name=Ananya Rao; Work Email=ananya@veloxa.in; Department=Leadership; Title=CEO; Join Date=2019-04-01; Location=Bengaluru; Status=Active"
+EV-0B661061-003,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:5,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 5
+Emp ID=VX002; Full Name=Manoj Kumar; Work Email=manoj@veloxa.in; Department=Sales; Title=Sales Lead; Manager ID=VX001; Join Date=2020-01-06; Location=Bengaluru; Status=Active"
+EV-0B661061-004,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:6,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 6
+Emp ID=VX003; Full Name=Meera Iyer; Work Email=meera@veloxa.in; Department=Finance; Title=CFO; Manager ID=VX001; Join Date=2023-06-12; Location=Bengaluru; Status=Active"
+EV-0B661061-005,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:7,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 7
+Emp ID=VX004; Full Name=Vikram Menon; Work Email=vikram@veloxa.in; Department=Engineering; Title=VP Engineering; Manager ID=VX001; Join Date=2021-02-01; Location=Bengaluru; Status=Active"
+EV-0B661061-006,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:8,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 8
+Emp ID=VX005; Full Name=Deepa Joshi; Work Email=deepa@veloxa.in; Department=People & Ops; Title=Head of People & Ops; Manager ID=VX001; Join Date=2022-07-04; Location=Bengaluru; Status=Active"
+EV-0B661061-007,Employee_Master.xlsx,Day1_Mon_16Nov/data_room/hr/Employee_Master.xlsx,sheet:Employees:row:9,2026-11-16T10:00:00+05:30,"Employee_Master.xlsx | sheet Employees | Excel row 9
+Emp ID=VX006; Full Name=Nikhil Bose; Work Email=nikhil@veloxa.in; Department=Marketing; Title=Head of Marketing; Manager ID=VX001; Join Date=2024-09-02; Location=Bengaluru; Status=Active"
+EV-8487569E-001,Connection_Worksheet.pdf,Day1_Mon_16Nov/data_room/templates/Connection_Worksheet.pdf,page:1,2026-11-16T10:00:00+05:30,"Connection_Worksheet.pdf, page 1
+Connection worksheet
+Completed by hand, in the final session. No devices.
+Connection 1
+Question asked
+Your claim (one sentence)
+Chain of evidence (refs, in
+order)
+Weakest link, and why
+What would change your
+mind
+Connection 2
+Question asked
+Your claim (one sentence)
+Chain of evidence (refs, in
+order)
+Weakest link, and why
+What would change your
+mind
+Connection 3
+Question asked
+Your claim (one sentence)
+Chain of evidence (refs, in
+order)
+"
+EV-8487569E-002,Connection_Worksheet.pdf,Day1_Mon_16Nov/data_room/templates/Connection_Worksheet.pdf,page:2,2026-11-16T10:00:00+05:30,"Connection_Worksheet.pdf, page 2
+Weakest link, and why
+What would change your
+mind
+"
+EV-C7224895-001,Entity_Resolution.xlsx,Day1_Mon_16Nov/data_room/templates/Entity_Resolution.xlsx,sheet:Entities:header,2026-11-16T10:00:00+05:30,Workbook Entity_Resolution.xlsx; sheet Entities; header row 3: Name or identifier as seen | Seen in (file) | Resolves to | Kind (person/vendor/project) | Evidence refs | Confidence (H/M/L)
+EV-1C589B96-001,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:header,2026-11-16T10:00:00+05:30,"Workbook Evidence_Index.xlsx; sheet Evidence index; header row 3: Ref | File | Sheet / page / row | Fact (your words) | Entities named | Date (as written) | Date (normalised, IST) | Confidence (H/M/L)"
+EV-1C589B96-008,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:10,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 10
+Ref=E007"
+EV-1C589B96-009,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:11,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 11
+Ref=E008"
+EV-1C589B96-010,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:12,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 12
+Ref=E009"
+EV-1C589B96-011,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:13,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 13
+Ref=E010"
+EV-1C589B96-012,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:14,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 14
+Ref=E011"
+EV-1C589B96-013,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:15,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 15
+Ref=E012"
+EV-1C589B96-014,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:16,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 16
+Ref=E013"
+EV-1C589B96-015,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:17,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 17
+Ref=E014"
+EV-1C589B96-016,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:18,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 18
+Ref=E015"
+EV-1C589B96-017,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:19,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 19
+Ref=E016"
+EV-1C589B96-018,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:20,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 20
+Ref=E017"
+EV-1C589B96-019,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:21,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 21
+Ref=E018"
+EV-1C589B96-020,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:22,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 22
+Ref=E019"
+EV-1C589B96-021,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:23,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 23
+Ref=E020"
+EV-1C589B96-022,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:24,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 24
+Ref=E021"
+EV-1C589B96-023,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:25,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 25
+Ref=E022"
+EV-1C589B96-024,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:26,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 26
+Ref=E023"
+EV-1C589B96-025,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:27,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 27
+Ref=E024"
+EV-1C589B96-026,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:28,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 28
+Ref=E025"
+EV-1C589B96-027,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:29,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 29
+Ref=E026"
+EV-1C589B96-028,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:30,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 30
+Ref=E027"
+EV-1C589B96-029,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:31,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 31
+Ref=E028"
+EV-1C589B96-030,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:32,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 32
+Ref=E029"
+EV-1C589B96-031,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:33,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 33
+Ref=E030"
+EV-1C589B96-032,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:34,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 34
+Ref=E031"
+EV-1C589B96-033,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:35,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 35
+Ref=E032"
+EV-1C589B96-034,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:36,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 36
+Ref=E033"
+EV-1C589B96-035,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:37,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 37
+Ref=E034"
+EV-1C589B96-036,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:38,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 38
+Ref=E035"
+EV-1C589B96-037,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:39,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 39
+Ref=E036"
+EV-1C589B96-002,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:4,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 4
+Ref=E001"
+EV-1C589B96-038,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:40,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 40
+Ref=E037"
+EV-1C589B96-039,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:41,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 41
+Ref=E038"
+EV-1C589B96-040,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:42,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 42
+Ref=E039"
+EV-1C589B96-041,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:43,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 43
+Ref=E040"
+EV-1C589B96-042,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:44,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 44
+Ref=E041"
+EV-1C589B96-043,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:45,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 45
+Ref=E042"
+EV-1C589B96-044,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:46,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 46
+Ref=E043"
+EV-1C589B96-045,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:47,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 47
+Ref=E044"
+EV-1C589B96-046,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:48,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 48
+Ref=E045"
+EV-1C589B96-047,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:49,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 49
+Ref=E046"
+EV-1C589B96-003,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:5,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 5
+Ref=E002"
+EV-1C589B96-048,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:50,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 50
+Ref=E047"
+EV-1C589B96-049,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:51,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 51
+Ref=E048"
+EV-1C589B96-050,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:52,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 52
+Ref=E049"
+EV-1C589B96-051,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:53,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 53
+Ref=E050"
+EV-1C589B96-052,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:54,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 54
+Ref=E051"
+EV-1C589B96-053,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:55,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 55
+Ref=E052"
+EV-1C589B96-054,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:56,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 56
+Ref=E053"
+EV-1C589B96-055,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:57,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 57
+Ref=E054"
+EV-1C589B96-056,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:58,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 58
+Ref=E055"
+EV-1C589B96-057,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:59,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 59
+Ref=E056"
+EV-1C589B96-004,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:6,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 6
+Ref=E003"
+EV-1C589B96-058,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:60,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 60
+Ref=E057"
+EV-1C589B96-059,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:61,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 61
+Ref=E058"
+EV-1C589B96-060,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:62,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 62
+Ref=E059"
+EV-1C589B96-061,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:63,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 63
+Ref=E060"
+EV-1C589B96-005,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:7,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 7
+Ref=E004"
+EV-1C589B96-006,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:8,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 8
+Ref=E005"
+EV-1C589B96-007,Evidence_Index.xlsx,Day1_Mon_16Nov/data_room/templates/Evidence_Index.xlsx,sheet:Evidence index:row:9,2026-11-16T10:00:00+05:30,"Evidence_Index.xlsx | sheet Evidence index | Excel row 9
+Ref=E006"
+EV-661D89CE-001,T1_CEO_Kickoff_Call.docx,Day1_Mon_16Nov/transcripts/T1_CEO_Kickoff_Call.docx,document,2026-11-16T10:00:00+05:30,"T1_CEO_Kickoff_Call.docx
+T1 · CEO kickoff call
+Auto-generated summary by MeetNotes AI. Recording 38 min, audio quality: fair. Speakers: Ananya R., Speaker 2 (unidentified).
+Summary
+Ananya wants a single place to ask questions about the company. Company is roughly eighteen people (""one-eighty, give or take""). Says ARR is ""around forty-two crore, maybe forty-five now"". Main concern is engineering speed; the routing engine ""version three"" was promised to some customers ""by the festive season"" and she is not sure it will make it.
+Key points
+Engineering team uses ""Linear, I think, or they moved back to the Jeera board"". Code is on Git Hub.
+Wants to understand ""what Vikram's people are actually doing all day"". Mentions Pria ""basically holds the routing thing together"" and ""the new boy Rahul"".
+Finance ""is Meera's world"". Mentions burn is ""around two point two"" (unit not stated).
+HR runs surveys ""on Cult Amp or something""; attrition ""feels high but Deepa says it's normal"".
+Marketing is ""doing a big summit thing in September"". Thinks marketing spend is ""fine"".
+Speaker 2 mentions that the board wants ""the number by March"" (not clear which number).
+Action items (auto-detected)
+Set up time with leadership (owner: unassigned)
+Send the hub sport export (owner: Speaker 2)
+Look into slag channel for engineering updates"
+EV-CE332EA0-001,T2_CFO_Call.docx,Day1_Mon_16Nov/transcripts/T2_CFO_Call.docx,document,2026-11-16T10:00:00+05:30,"T2_CFO_Call.docx
+T2 · CFO call
+Auto-generated summary by MeetNotes AI. Recording 26 min, audio quality: poor (speakerphone). Speakers: Meera I., Ananya R.
+Summary
+Meera walked through the financial year. Year runs ""April to March, so we're in FY twenty-six"" (note: speaker may have said twenty-seven). ARR at the start of the year was ""forty-eight"". Burn has been ""two point two lakhs a month, sometimes two point five"". She plans a hiring freeze ""if the raise slips"".
+Key points
+Books moved from Tally to ""Joho books"" ""sometime in Jan, or was it Feb""; older numbers ""may not match"".
+Payroll runs on ""Kayka"". Individual salaries ""must never show up in anything Ananya sees, only totals"".
+Her team: Kartik on planning (""he's doing his CFA, so forecasts are a bit late""), and Fatima Shaikh on accounts and payroll (""she was out for her wedding, that month was messy"").
+Marketing spend: ""Nikhil's numbers never match mine.""
+Mentions ""the two backend roles"" in passing, then the call moves on.
+Action items (auto-detected)
+Share the budget vs actuals sheet (owner: Meera)
+Check the freeze decision with Vicky (owner: unassigned)"
+EV-6A92017A-001,Resignation_Letter_SM.pdf,Day2_Tue_17Nov/data_room/documents/Resignation_Letter_SM.pdf,page:1,2026-11-17T10:00:00+05:30,"Resignation_Letter_SM.pdf, page 1
+Siddharth Mehta
+15 September 2026
+To Nikhil Bose, Head of Marketing
+Please accept this as my resignation from the role of Product Marketing Manager. As per my notice period,
+my last working day will be 31 October 2026.
+I've learned a lot here. I'm looking for a role with clearer launch timelines, where the work I prepare reaches
+customers. I'll hand over everything I've built, including the launch kit, before I leave.
+Regards,
+Siddharth
+"
+EV-61F5EA7D-001,06.eml,Day2_Tue_17Nov/data_room/email/06.eml,section:1,2026-11-17T10:00:00+05:30,"06.eml, section 1
+From: Meera Iyer <meera@veloxa.in>
+To: Vikram Menon <vikram@veloxa.in>
+Date: Wed, 12 Aug 2026 10:12:00 +0530
+Subject: Pausing two reqs
+Vikram,"
+EV-61F5EA7D-002,06.eml,Day2_Tue_17Nov/data_room/email/06.eml,section:2,2026-11-17T10:00:00+05:30,"06.eml, section 2
+Pausing REQ-014 and REQ-015 until the round closes. Burn is the priority this quarter."
+EV-61F5EA7D-003,06.eml,Day2_Tue_17Nov/data_room/email/06.eml,section:3,2026-11-17T10:00:00+05:30,"06.eml, section 3
+Meera"
+EV-B6E02B9E-001,07.eml,Day2_Tue_17Nov/data_room/email/07.eml,document,2026-11-17T10:00:00+05:30,"07.eml
+From: Vikram Menon <vikram@veloxa.in>
+To: Meera Iyer <meera@veloxa.in>
+Date: Wed, 12 Aug 2026 11:48:00 +0530
+Subject: Re: Pausing two reqs
+Understood. We'll absorb it.
+"
+EV-820CFEBE-001,10.eml,Day2_Tue_17Nov/data_room/email/10.eml,section:1,2026-11-17T10:00:00+05:30,"10.eml, section 1
+From: Arjun Das <arjun@veloxa.in>
+To: Deepa Joshi <deepa@veloxa.in>
+Date: Fri, 18 Sep 2026 12:00:00 +0530
+Subject: remote
+Hi Deepa, Pune has worked out really well. I'd like to make remote permanent if that's okay.
+Happy to come to Bengaluru once a month."
+EV-820CFEBE-002,10.eml,Day2_Tue_17Nov/data_room/email/10.eml,section:2,2026-11-17T10:00:00+05:30,"10.eml, section 2
+Arjun"
+EV-01B996E8-001,11.eml,Day2_Tue_17Nov/data_room/email/11.eml,section:1,2026-11-17T10:00:00+05:30,"11.eml, section 1
+From: Deepa Joshi <deepa@veloxa.in>
+To: Ananya Rao <ananya@veloxa.in>
+Date: Tue, 29 Sep 2026 17:30:00 +0530
+Subject: pulse results
+Ananya, engineering pulse dropped this quarter. The team is too small for me to share comments.
+I'd suggest Vikram does 1:1s this week."
+EV-01B996E8-002,11.eml,Day2_Tue_17Nov/data_room/email/11.eml,section:2,2026-11-17T10:00:00+05:30,"11.eml, section 2
+Deepa"
+EV-997B3A5E-001,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:header,2026-11-17T10:00:00+05:30,Workbook Hiring_Tracker.xlsx; sheet Requisitions; header row 3: Req ID | Role | Team | Hiring Manager | Opened | Status | Status Date | In pipeline | Notes
+EV-997B3A5E-002,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:row:4,2026-11-17T10:00:00+05:30,"Hiring_Tracker.xlsx | sheet Requisitions | Excel row 4
+Req ID=REQ-011; Role=Account Executive; Team=Sales; Hiring Manager=VX002; Opened=2026-01-10; Status=Closed - not hired; Status Date=2026-04-02; In pipeline=0; Notes=Budget moved to marketing"
+EV-997B3A5E-003,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:row:5,2026-11-17T10:00:00+05:30,"Hiring_Tracker.xlsx | sheet Requisitions | Excel row 5
+Req ID=REQ-013; Role=Backend Engineer; Team=Engineering; Hiring Manager=VX004; Opened=2025-12-01; Status=Filled; Status Date=2026-01-12; In pipeline=0; Notes=Offer accepted, joining 3-Feb"
+EV-997B3A5E-004,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:row:6,2026-11-17T10:00:00+05:30,"Hiring_Tracker.xlsx | sheet Requisitions | Excel row 6
+Req ID=REQ-014; Role=Backend Engineer (Routing); Team=Engineering; Hiring Manager=VX004; Opened=2026-05-18; Status=On hold; Status Date=2026-08-12; In pipeline=3; Notes=Final round 14-Aug cancelled"
+EV-997B3A5E-005,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:row:7,2026-11-17T10:00:00+05:30,"Hiring_Tracker.xlsx | sheet Requisitions | Excel row 7
+Req ID=REQ-015; Role=Backend Engineer (Platform); Team=Engineering; Hiring Manager=VX004; Opened=2026-05-18; Status=On hold; Status Date=2026-08-12; In pipeline=5"
+EV-997B3A5E-006,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:row:8,2026-11-17T10:00:00+05:30,"Hiring_Tracker.xlsx | sheet Requisitions | Excel row 8
+Req ID=REQ-016; Role=Product Marketing Manager; Team=Marketing; Hiring Manager=VX006; Opened=2026-09-17; Status=Open; Status Date=2026-09-17; In pipeline=7; Notes=Backfill"
+EV-997B3A5E-007,Hiring_Tracker.xlsx,Day2_Tue_17Nov/data_room/hr/Hiring_Tracker.xlsx,sheet:Requisitions:row:9,2026-11-17T10:00:00+05:30,"Hiring_Tracker.xlsx | sheet Requisitions | Excel row 9
+Req ID=REQ-017; Role=Support Associate; Team=Support; Hiring Manager=VX016; Opened=2026-10-01; Status=Open; Status Date=2026-10-01; In pipeline=2"
+EV-B2F66676-001,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:header,2026-11-17T10:00:00+05:30,Workbook Leave_Register.xlsx; sheet Leave FY; header row 3: Employee | Leave Type | From | To | Days | Approved By
+EV-B2F66676-008,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:10,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 10
+Employee=K. Subramanian; Leave Type=Exam; From=2026-05-25; To=2026-05-29; Days=5; Approved By=MI"
+EV-B2F66676-009,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:11,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 11
+Employee=N. Bose; Leave Type=Casual; From=2026-06-12; To=2026-06-12; Days=1; Approved By=AR"
+EV-B2F66676-010,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:12,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 12
+Employee=A. Khan; Leave Type=Earned; From=2026-06-15; To=2026-06-19; Days=5; Approved By=NB"
+EV-B2F66676-011,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:13,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 13
+Employee=R. Verma; Leave Type=Casual; From=2026-07-10; To=2026-07-10; Days=1; Approved By=VM"
+EV-B2F66676-012,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:14,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 14
+Employee=S. Mehta; Leave Type=Earned; From=2026-08-03; To=2026-08-07; Days=5; Approved By=NB"
+EV-B2F66676-013,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:15,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 15
+Employee=D. Joshi; Leave Type=Earned; From=2026-08-17; To=2026-08-21; Days=5; Approved By=AR"
+EV-B2F66676-014,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:16,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 16
+Employee=P. Nair; Leave Type=Personal (half day, PM); From=2026-09-03; To=2026-09-03; Days=0.5; Approved By=VM"
+EV-B2F66676-015,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:17,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 17
+Employee=P. Nair; Leave Type=Personal (half day, PM); From=2026-09-08; To=2026-09-08; Days=0.5; Approved By=VM"
+EV-B2F66676-016,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:18,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 18
+Employee=P. Nair; Leave Type=Personal (half day, PM); From=2026-09-15; To=2026-09-15; Days=0.5; Approved By=VM"
+EV-B2F66676-017,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:19,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 19
+Employee=P. Nair; Leave Type=Personal (half day, PM); From=2026-09-17; To=2026-09-17; Days=0.5; Approved By=VM"
+EV-B2F66676-018,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:20,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 20
+Employee=P. Nair; Leave Type=Personal (half day, PM); From=2026-09-24; To=2026-09-24; Days=0.5; Approved By=VM"
+EV-B2F66676-019,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:21,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 21
+Employee=L. Pillai; Leave Type=Casual; From=2026-10-09; To=2026-10-09; Days=1; Approved By=DJ"
+EV-B2F66676-020,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:22,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 22
+Employee=V. Menon; Leave Type=Earned; From=2026-10-12; To=2026-10-16; Days=5; Approved By=AR"
+EV-B2F66676-002,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:4,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 4
+Employee=A. Das; Leave Type=Casual; From=2025-11-14; To=2025-11-14; Days=1; Approved By=VM"
+EV-B2F66676-003,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:5,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 5
+Employee=P. Nair; Leave Type=Casual; From=2025-12-24; To=2025-12-24; Days=1; Approved By=VM"
+EV-B2F66676-004,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:6,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 6
+Employee=K. Subramanian; Leave Type=Casual; From=2026-01-16; To=2026-01-16; Days=1; Approved By=MI"
+EV-B2F66676-005,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:7,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 7
+Employee=F. Sheikh; Leave Type=Marriage; From=2026-02-09; To=2026-02-27; Days=15; Approved By=MI"
+EV-B2F66676-006,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:8,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 8
+Employee=A. Das; Leave Type=Relocation; From=2026-03-02; To=2026-03-06; Days=5; Approved By=VM"
+EV-B2F66676-007,Leave_Register.xlsx,Day2_Tue_17Nov/data_room/hr/Leave_Register.xlsx,sheet:Leave FY:row:9,2026-11-17T10:00:00+05:30,"Leave_Register.xlsx | sheet Leave FY | Excel row 9
+Employee=S. Kulkarni; Leave Type=Sick; From=2026-04-21; To=2026-04-22; Days=2; Approved By=VM"
+EV-A6C90356-001,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:header,2026-11-17T10:00:00+05:30,Workbook Pulse_Survey.xlsx; sheet Pulse by team; header row 3: Quarter | Team | Team size | Responses | Engagement (1-5) | Comments
+EV-A6C90356-008,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:10,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 10
+Quarter=Apr-Jun 2026; Team=Finance; Team size=3; Responses=3; Engagement (1-5)=3.8; Comments=Not shown: team smaller than 6"
+EV-A6C90356-009,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:11,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 11
+Quarter=Jul-Sep 2026; Team=Finance; Team size=3; Responses=3; Engagement (1-5)=3.9; Comments=Not shown: team smaller than 6"
+EV-A6C90356-010,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:12,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 12
+Quarter=Oct-Dec 2025; Team=People & Ops; Team size=3; Responses=3; Engagement (1-5)=4.1; Comments=Not shown: team smaller than 6"
+EV-A6C90356-011,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:13,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 13
+Quarter=Jan-Mar 2026; Team=People & Ops; Team size=3; Responses=3; Engagement (1-5)=4.2; Comments=Not shown: team smaller than 6"
+EV-A6C90356-012,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:14,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 14
+Quarter=Apr-Jun 2026; Team=People & Ops; Team size=3; Responses=3; Engagement (1-5)=4; Comments=Not shown: team smaller than 6"
+EV-A6C90356-013,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:15,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 15
+Quarter=Jul-Sep 2026; Team=People & Ops; Team size=3; Responses=3; Engagement (1-5)=4.1; Comments=Not shown: team smaller than 6"
+EV-A6C90356-014,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:16,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 16
+Quarter=Oct-Dec 2025; Team=Marketing; Team size=3; Responses=3; Engagement (1-5)=3.9; Comments=Not shown: team smaller than 6"
+EV-A6C90356-015,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:17,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 17
+Quarter=Jan-Mar 2026; Team=Marketing; Team size=3; Responses=3; Engagement (1-5)=3.9; Comments=Not shown: team smaller than 6"
+EV-A6C90356-016,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:18,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 18
+Quarter=Apr-Jun 2026; Team=Marketing; Team size=3; Responses=3; Engagement (1-5)=3.8; Comments=Not shown: team smaller than 6"
+EV-A6C90356-017,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:19,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 19
+Quarter=Jul-Sep 2026; Team=Marketing; Team size=3; Responses=3; Engagement (1-5)=3.4; Comments=Not shown: team smaller than 6"
+EV-A6C90356-018,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:20,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 20
+Quarter=Oct-Dec 2025; Team=Sales; Team size=2; Responses=2; Engagement (1-5)=3.7; Comments=Not shown: team smaller than 6"
+EV-A6C90356-019,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:21,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 21
+Quarter=Jan-Mar 2026; Team=Sales; Team size=2; Responses=2; Engagement (1-5)=3.8; Comments=Not shown: team smaller than 6"
+EV-A6C90356-020,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:22,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 22
+Quarter=Apr-Jun 2026; Team=Sales; Team size=2; Responses=2; Engagement (1-5)=3.9; Comments=Not shown: team smaller than 6"
+EV-A6C90356-021,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:23,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 23
+Quarter=Jul-Sep 2026; Team=Sales; Team size=2; Responses=2; Engagement (1-5)=3.8; Comments=Not shown: team smaller than 6"
+EV-A6C90356-022,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:24,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 24
+Quarter=Oct-Dec 2025; Team=Support; Team size=2; Responses=2; Engagement (1-5)=4; Comments=Not shown: team smaller than 6"
+EV-A6C90356-023,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:25,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 25
+Quarter=Jan-Mar 2026; Team=Support; Team size=2; Responses=2; Engagement (1-5)=3.9; Comments=Not shown: team smaller than 6"
+EV-A6C90356-024,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:26,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 26
+Quarter=Apr-Jun 2026; Team=Support; Team size=2; Responses=2; Engagement (1-5)=4.1; Comments=Not shown: team smaller than 6"
+EV-A6C90356-025,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:27,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 27
+Quarter=Jul-Sep 2026; Team=Support; Team size=2; Responses=2; Engagement (1-5)=4; Comments=Not shown: team smaller than 6"
+EV-A6C90356-002,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:4,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 4
+Quarter=Oct-Dec 2025; Team=Engineering; Team size=5; Responses=5; Engagement (1-5)=4; Comments=Not shown: team smaller than 6"
+EV-A6C90356-003,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:5,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 5
+Quarter=Jan-Mar 2026; Team=Engineering; Team size=5; Responses=5; Engagement (1-5)=4; Comments=Not shown: team smaller than 6"
+EV-A6C90356-004,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:6,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 6
+Quarter=Apr-Jun 2026; Team=Engineering; Team size=5; Responses=5; Engagement (1-5)=3.9; Comments=Not shown: team smaller than 6"
+EV-A6C90356-005,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:7,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 7
+Quarter=Jul-Sep 2026; Team=Engineering; Team size=5; Responses=4; Engagement (1-5)=3.1; Comments=Not shown: team smaller than 6"
+EV-A6C90356-006,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:8,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 8
+Quarter=Oct-Dec 2025; Team=Finance; Team size=3; Responses=3; Engagement (1-5)=3.8; Comments=Not shown: team smaller than 6"
+EV-A6C90356-007,Pulse_Survey.xlsx,Day2_Tue_17Nov/data_room/hr/Pulse_Survey.xlsx,sheet:Pulse by team:row:9,2026-11-17T10:00:00+05:30,"Pulse_Survey.xlsx | sheet Pulse by team | Excel row 9
+Quarter=Jan-Mar 2026; Team=Finance; Team size=3; Responses=3; Engagement (1-5)=3.6; Comments=Not shown: team smaller than 6"
+EV-9E6D9AE0-001,T3_Head_of_People_Call.docx,Day2_Tue_17Nov/transcripts/T3_Head_of_People_Call.docx,document,2026-11-17T10:00:00+05:30,"T3_Head_of_People_Call.docx
+T3 · Head of People call
+Auto-generated summary by MeetNotes AI. Recording 31 min, audio quality: good. Speakers: Deepa J., Ananya R., Rohan (joined late).
+Summary
+Deepa says attrition is ""about twelve, which is normal for Bangalore"" (unclear if this is a percentage, a headcount, or a target). Pulse surveys run quarterly on ""Cult Amp"". Engineering scores ""dipped in the July round"". She wants Ananya to see survey comments directly: ""numbers alone hide everything"".
+Key points
+HR team: Deepa, Rohan on hiring, Lakshmi as HRBP (""she handles exits"").
+Rohan says there were ""twenty-two open roles in April"" and ""we lost six of them in August"". Offer acceptance is ""down to fifty-something"".
+Hiring runs on ""Liver""; HR records on ""Kekka"".
+Exit interviews: ""most of them say workload"". Deepa mentions ""Sid from marketing"" has put in his papers.
+Deepa says there is ""one engineer I'm worried about"" but will not name them on the call.
+Manager training started ""after Diwali, so November-ish"" (Rohan says ""January"").
+Action items (auto-detected)
+Export the pulse results by team (owner: Deepa)
+Ananya to decide on comment visibility (owner: Ananya)"
+EV-50522929-001,T6a_CEO_Voice_Note.docx,Day2_Tue_17Nov/transcripts/T6a_CEO_Voice_Note.docx,document,2026-11-17T10:00:00+05:30,"T6a_CEO_Voice_Note.docx
+T6a · CEO voice note
+Auto-transcribed WhatsApp voice notes forwarded by Ananya's assistant.
+""Hi, quick one. I won't type questions every morning, na. When I open it, it should just tell me what to worry about. Top three. Okay, bye."""
+EV-4C785C6F-001,Atlas_Launch_Kit_v1.pdf,Day3_Wed_18Nov/data_room/documents/Atlas_Launch_Kit_v1.pdf,page:1,2026-11-18T10:00:00+05:30,"Atlas_Launch_Kit_v1.pdf, page 1
+Atlas launch kit, v1
+Owner: Sid. 21 Jul 2026.
+Asset
+Status
+Launch deck (sales)
+Ready
+Website page
+Ready, unpublished
+Customer email sequence (3)
+Ready
+Press note
+Draft
+Launch date
+TBC with engineering (planned 22 Sep)
+"
+EV-22A34F88-001,Invoice_PIS-114.pdf,Day3_Wed_18Nov/data_room/documents/Invoice_PIS-114.pdf,page:1,2026-11-18T10:00:00+05:30,"Invoice_PIS-114.pdf, page 1
+PATIL INFRA SERVICES
+DevOps and reliability contractors. Baner Road, Pune 411045. GSTIN 27ACZPP8812K1Z3
+TAX INVOICE
+Invoice No.
+PIS-114
+Date
+01/10/2026
+Bill To
+Veloxa Technologies Pvt Ltd
+Place of Supply
+Karnataka (29)
+Description
+Amount (Rs.)
+On-call SRE support, S. Patil, September 2026 (monthly retainer)
+1,20,000
+IGST @ 18%
+21,600
+Total
+1,41,600
+Previous invoice PIS-108 (18 to 31 Aug, pro rata) settled.
+"
+EV-F3720304-001,04.eml,Day3_Wed_18Nov/data_room/email/04.eml,section:1,2026-11-18T10:00:00+05:30,"04.eml, section 1
+From: Vikram Menon <vikram@veloxa.in>
+To: Ananya Rao <ananya@veloxa.in>
+Date: Tue, 02 Jun 2026 09:30:00 +0530
+Subject: Atlas plan
+Ananya,"
+EV-F3720304-002,04.eml,Day3_Wed_18Nov/data_room/email/04.eml,section:2,2026-11-18T10:00:00+05:30,"04.eml, section 2
+Atlas plan: Priya leads the core engine and re-routing, Rahul on the API, Arjun on the UI,
+Sneha on hardening. 15 Sep GA is achievable if the two backend hires land by July."
+EV-F3720304-003,04.eml,Day3_Wed_18Nov/data_room/email/04.eml,section:3,2026-11-18T10:00:00+05:30,"04.eml, section 3
+Vikram"
+EV-50DAA2AD-001,05.eml,Day3_Wed_18Nov/data_room/email/05.eml,document,2026-11-18T10:00:00+05:30,"05.eml
+From: Siddharth Mehta <sid@veloxa.in>
+To: Nikhil Bose <nikhil@veloxa.in>
+Date: Wed, 22 Jul 2026 18:05:00 +0530
+Subject: Atlas launch kit ready
+Launch kit is done (deck, page, emails). Just need a date from engineering.
+"
+EV-336BFBF7-001,08.eml,Day3_Wed_18Nov/data_room/email/08.eml,section:1,2026-11-18T10:00:00+05:30,"08.eml, section 1
+From: Sneha Kulkarni <sneha.k@veloxa.in>
+To: Vikram Menon <vikram@veloxa.in>
+Date: Mon, 24 Aug 2026 09:05:00 +0530
+Subject: August
+Third SEV1 this month. I'm pausing the Atlas perf tickets to stabilise routing-api.
+The contractor starts on the rota this week."
+EV-336BFBF7-002,08.eml,Day3_Wed_18Nov/data_room/email/08.eml,section:2,2026-11-18T10:00:00+05:30,"08.eml, section 2
+Sneha"
+EV-BCBB48F1-001,09.eml,Day3_Wed_18Nov/data_room/email/09.eml,section:1,2026-11-18T10:00:00+05:30,"09.eml, section 1
+From: Priya Nair <priya.n@veloxa.in>
+To: Vikram Menon <vikram@veloxa.in>
+Date: Tue, 01 Sep 2026 23:47:00 +0530
+Subject: time this week?
+Can we talk about Atlas ownership sometime this week? Need some time with you."
+EV-BCBB48F1-002,09.eml,Day3_Wed_18Nov/data_room/email/09.eml,section:2,2026-11-18T10:00:00+05:30,"09.eml, section 2
+Priya"
+EV-2DDF7875-001,Email_Printouts.pdf,Day3_Wed_18Nov/data_room/email/Email_Printouts.pdf,page:1,2026-11-18T10:00:00+05:30,"Email_Printouts.pdf, page 1
+Email export
+Selected threads. Times in IST.
+01. Feb payroll done
+From: Karthik Subramanian <karthik.s@veloxa.in>
+To: Meera Iyer <meera@veloxa.in>
+Date: Sat, 28 Feb 2026 20:15
+Meera,
+
+Ran Feb payroll since Fatima is out. Used the Jan sheet and added the new joiner.
+Totals attached in the register.
+
+Karthik
+02. payslip query
+From: Rahul Verma <rahul.v@veloxa.in>
+To: Fatima Sheikh <fatima@veloxa.in>
+Date: Fri, 06 Mar 2026 11:02
+Hi Fatima, small query on my first payslip. The amount looks higher than what I expected for a
+partial month. Is that right?
+
+Rahul
+03. Re: payslip query
+From: Fatima Sheikh <fatima@veloxa.in>
+To: Rahul Verma <rahul.v@veloxa.in>
+Date: Tue, 10 Mar 2026 15:40
+Will check and get back.
+
+Fatima
+04. Atlas plan
+From: Vikram Menon <vikram@veloxa.in>
+To: Ananya Rao <ananya@veloxa.in>
+Date: Tue, 02 Jun 2026 09:30
+Ananya,
+
+Atlas plan: Priya leads the core engine and re-routing, Rahul on the API, Arjun on the UI,
+Sneha on hardening. 15 Sep GA is achievable if the two backend hires land by July.
+
+Vikram
+05. Atlas launch kit ready
+From: Siddharth Mehta <sid@veloxa.in>
+To: Nikhil Bose <nikhil@veloxa.in>
+Cc: Vikram Menon <vikram@veloxa.in>
+Date: Wed, 22 Jul 2026 18:05
+Launch kit is done (deck, page, emails). Just need a date from engineering.
+06. Pausing two reqs
+From: Meera Iyer <meera@veloxa.in>
+To: Vikram Menon <vikram@veloxa.in>
+Cc: Ananya Rao <ananya@veloxa.in>, Rohan Banerjee <rohan@veloxa.in>
+"
+EV-2DDF7875-002,Email_Printouts.pdf,Day3_Wed_18Nov/data_room/email/Email_Printouts.pdf,page:2,2026-11-18T10:00:00+05:30,"Email_Printouts.pdf, page 2
+Date: Wed, 12 Aug 2026 10:12
+Vikram,
+
+Pausing REQ-014 and REQ-015 until the round closes. Burn is the priority this quarter.
+
+Meera
+07. Re: Pausing two reqs
+From: Vikram Menon <vikram@veloxa.in>
+To: Meera Iyer <meera@veloxa.in>
+Date: Wed, 12 Aug 2026 11:48
+Understood. We'll absorb it.
+08. August
+From: Sneha Kulkarni <sneha.k@veloxa.in>
+To: Vikram Menon <vikram@veloxa.in>
+Date: Mon, 24 Aug 2026 09:05
+Third SEV1 this month. I'm pausing the Atlas perf tickets to stabilise routing-api.
+The contractor starts on the rota this week.
+
+Sneha
+09. time this week?
+From: Priya Nair <priya.n@veloxa.in>
+To: Vikram Menon <vikram@veloxa.in>
+Date: Tue, 01 Sep 2026 23:47
+Can we talk about Atlas ownership sometime this week? Need some time with you.
+
+Priya
+10. remote
+From: Arjun Das <arjun@veloxa.in>
+To: Deepa Joshi <deepa@veloxa.in>
+Date: Fri, 18 Sep 2026 12:00
+Hi Deepa, Pune has worked out really well. I'd like to make remote permanent if that's okay.
+Happy to come to Bengaluru once a month.
+
+Arjun
+11. pulse results
+From: Deepa Joshi <deepa@veloxa.in>
+To: Ananya Rao <ananya@veloxa.in>
+Date: Tue, 29 Sep 2026 17:30
+Ananya, engineering pulse dropped this quarter. The team is too small for me to share comments.
+I'd suggest Vikram does 1:1s this week.
+
+Deepa
+"
+EV-4F59F01D-001,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:header,2026-11-18T10:00:00+05:30,Workbook Incidents_Aug-Oct_2026.xlsx; sheet Incidents; header row 3: ID | Severity | Opened | Resolved | Service | Responder
+EV-4F59F01D-008,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:10,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 10
+ID=INC-207; Severity=SEV2; Opened=2026-09-05T16:10:00Z; Resolved=2026-09-05T17:00:00Z; Service=routing-api; Responder=Snehal"
+EV-4F59F01D-009,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:11,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 11
+ID=INC-208; Severity=SEV3; Opened=2026-09-19T07:45:00Z; Resolved=2026-09-19T08:05:00Z; Service=planner-web; Responder=Sneha"
+EV-4F59F01D-010,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:12,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 12
+ID=INC-209; Severity=SEV2; Opened=2026-09-28T21:30:00Z; Resolved=2026-09-28T22:45:00Z; Service=routing-api; Responder=Snehal"
+EV-4F59F01D-011,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:13,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 13
+ID=INC-210; Severity=SEV3; Opened=2026-10-09T10:00:00Z; Resolved=2026-10-09T10:25:00Z; Service=traffic-ingest; Responder=Sneha"
+EV-4F59F01D-012,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:14,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 14
+ID=INC-211; Severity=SEV2; Opened=2026-10-21T19:20:00Z; Resolved=2026-10-21T20:10:00Z; Service=routing-api; Responder=Snehal"
+EV-4F59F01D-002,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:4,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 4
+ID=INC-201; Severity=SEV1; Opened=2026-08-04T05:12:00Z; Resolved=2026-08-04T08:40:00Z; Service=routing-api; Responder=Sneha"
+EV-4F59F01D-003,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:5,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 5
+ID=INC-202; Severity=SEV2; Opened=2026-08-07T14:30:00Z; Resolved=2026-08-07T15:05:00Z; Service=planner-web; Responder=Arjun"
+EV-4F59F01D-004,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:6,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 6
+ID=INC-203; Severity=SEV1; Opened=2026-08-13T18:55:00Z; Resolved=2026-08-14T01:10:00Z; Service=routing-api; Responder=Sneha"
+EV-4F59F01D-005,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:7,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 7
+ID=INC-204; Severity=SEV2; Opened=2026-08-16T09:00:00Z; Resolved=2026-08-16T10:20:00Z; Service=traffic-ingest; Responder=Sneha"
+EV-4F59F01D-006,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:8,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 8
+ID=INC-205; Severity=SEV1; Opened=2026-08-22T20:41:00Z; Resolved=2026-08-23T02:15:00Z; Service=routing-api; Responder=Sneha"
+EV-4F59F01D-007,Incidents_Aug-Oct_2026.xlsx,Day3_Wed_18Nov/data_room/engineering/Incidents_Aug-Oct_2026.xlsx,sheet:Incidents:row:9,2026-11-18T10:00:00+05:30,"Incidents_Aug-Oct_2026.xlsx | sheet Incidents | Excel row 9
+ID=INC-206; Severity=SEV3; Opened=2026-08-27T11:03:00Z; Resolved=2026-08-27T11:30:00Z; Service=traffic-ingest; Responder=Snehal"
+EV-FD891985-064,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Epics:header,2026-11-18T10:00:00+05:30,Workbook Jira_Export_ATLAS.xlsx; sheet Epics; header row 1: Key | Epic Name
+EV-FD891985-065,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Epics:row:2,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Epics | Excel row 2
+Key=ATLAS-1; Epic Name=Core routing engine v3"
+EV-FD891985-066,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Epics:row:3,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Epics | Excel row 3
+Key=ATLAS-2; Epic Name=Real-time re-routing"
+EV-FD891985-067,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Epics:row:4,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Epics | Excel row 4
+Key=ATLAS-3; Epic Name=Public API v3"
+EV-FD891985-068,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Epics:row:5,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Epics | Excel row 5
+Key=ATLAS-4; Epic Name=Planner UI"
+EV-FD891985-069,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Epics:row:6,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Epics | Excel row 6
+Key=ATLAS-5; Epic Name=Performance and hardening"
+EV-FD891985-001,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:header,2026-11-18T10:00:00+05:30,Workbook Jira_Export_ATLAS.xlsx; sheet Issues; header row 3: Key | Type | Summary | Epic Link | Assignee | Story Points | Status | Created | Resolved | Fix Version
+EV-FD891985-008,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:10,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 10
+Key=ATLAS-17; Type=Story; Summary=Multi-stop merge (pn-7); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=Done; Created=2026-06-17; Resolved=2026-08-10; Fix Version=Atlas GA"
+EV-FD891985-009,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:11,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 11
+Key=ATLAS-18; Type=Story; Summary=Capacity rules (pn-8); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=Done; Created=2026-07-13; Resolved=2026-08-12; Fix Version=Atlas GA"
+EV-FD891985-010,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:12,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 12
+Key=ATLAS-19; Type=Story; Summary=Depot constraints (pn-9); Epic Link=ATLAS-1; Assignee=PN; Story Points=8; Status=In Progress; Created=2026-05-22; Fix Version=Atlas GA"
+EV-FD891985-011,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:13,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 13
+Key=ATLAS-20; Type=Story; Summary=Capacity rules (pn-10); Epic Link=ATLAS-1; Assignee=PN; Story Points=2; Status=Done; Created=2026-04-11; Resolved=2026-04-26; Fix Version=Atlas GA"
+EV-FD891985-012,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:14,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 14
+Key=ATLAS-21; Type=Story; Summary=Capacity rules (pn-11); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=In Progress; Created=2026-06-25; Fix Version=Atlas GA"
+EV-FD891985-013,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:15,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 15
+Key=ATLAS-22; Type=Story; Summary=Solver warm start (pn-12); Epic Link=ATLAS-1; Assignee=PN; Story Points=5; Status=Done; Created=2026-06-13; Resolved=2026-07-08; Fix Version=Atlas GA"
+EV-FD891985-014,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:16,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 16
+Key=ATLAS-23; Type=Story; Summary=Capacity rules (pn-13); Epic Link=ATLAS-1; Assignee=PN; Story Points=5; Status=Done; Created=2026-05-22; Resolved=2026-06-13; Fix Version=Atlas GA"
+EV-FD891985-015,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:17,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 17
+Key=ATLAS-24; Type=Story; Summary=Capacity rules (rv-1); Epic Link=ATLAS-1; Assignee=RV; Story Points=3; Status=To Do; Created=2026-06-28; Fix Version=Atlas GA"
+EV-FD891985-016,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:18,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 18
+Key=ATLAS-25; Type=Story; Summary=Time windows (rv-2); Epic Link=ATLAS-1; Assignee=RV; Story Points=3; Status=To Do; Created=2026-04-20; Fix Version=Atlas GA"
+EV-FD891985-017,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:19,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 19
+Key=ATLAS-26; Type=Story; Summary=Capacity rules (rv-3); Epic Link=ATLAS-1; Assignee=RV; Story Points=3; Status=Done; Created=2026-04-11; Resolved=2026-04-21; Fix Version=Atlas GA"
+EV-FD891985-018,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:20,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 20
+Key=ATLAS-27; Type=Story; Summary=Diff push (pn-1); Epic Link=ATLAS-2; Assignee=PN; Story Points=2; Status=To Do; Created=2026-05-12; Fix Version=Atlas GA"
+EV-FD891985-019,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:21,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 21
+Key=ATLAS-28; Type=Story; Summary=Re-route trigger (pn-2); Epic Link=ATLAS-2; Assignee=PN; Story Points=2; Status=Done; Created=2026-06-23; Resolved=2026-07-18; Fix Version=Atlas GA"
+EV-FD891985-020,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:22,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 22
+Key=ATLAS-29; Type=Story; Summary=Re-route trigger (pn-3); Epic Link=ATLAS-2; Assignee=PN; Story Points=8; Status=In Progress; Created=2026-07-16; Fix Version=Atlas GA"
+EV-FD891985-021,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:23,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 23
+Key=ATLAS-30; Type=Story; Summary=Stale route guard (pn-4); Epic Link=ATLAS-2; Assignee=PN; Story Points=3; Status=To Do; Created=2026-04-21; Fix Version=Atlas GA"
+EV-FD891985-022,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:24,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 24
+Key=ATLAS-31; Type=Story; Summary=Re-route trigger (pn-5); Epic Link=ATLAS-2; Assignee=PN; Story Points=3; Status=Done; Created=2026-04-16; Resolved=2026-05-14; Fix Version=Atlas GA"
+EV-FD891985-023,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:25,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 25
+Key=ATLAS-32; Type=Story; Summary=Re-route trigger (pn-6); Epic Link=ATLAS-2; Assignee=PN; Story Points=5; Status=To Do; Created=2026-07-24; Fix Version=Atlas GA"
+EV-FD891985-024,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:26,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 26
+Key=ATLAS-33; Type=Story; Summary=Traffic feed ingest (pn-7); Epic Link=ATLAS-2; Assignee=PN; Story Points=2; Status=Done; Created=2026-07-09; Resolved=2026-08-17; Fix Version=Atlas GA"
+EV-FD891985-025,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:27,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 27
+Key=ATLAS-34; Type=Story; Summary=Fallback path (pn-8); Epic Link=ATLAS-2; Assignee=PN; Story Points=3; Status=Done; Created=2026-07-23; Resolved=2026-08-26; Fix Version=Atlas GA"
+EV-FD891985-026,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:28,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 28
+Key=ATLAS-35; Type=Story; Summary=Stale route guard (pn-9); Epic Link=ATLAS-2; Assignee=PN; Story Points=3; Status=To Do; Created=2026-05-27; Fix Version=Atlas GA"
+EV-FD891985-027,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:29,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 29
+Key=ATLAS-36; Type=Story; Summary=Traffic feed ingest (pn-10); Epic Link=ATLAS-2; Assignee=PN; Story Points=5; Status=To Do; Created=2026-05-04; Fix Version=Atlas GA"
+EV-FD891985-028,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:30,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 30
+Key=ATLAS-37; Type=Story; Summary=Stale route guard (pn-11); Epic Link=ATLAS-2; Assignee=PN; Story Points=3; Status=Done; Created=2026-06-17; Resolved=2026-07-15; Fix Version=Atlas GA"
+EV-FD891985-029,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:31,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 31
+Key=ATLAS-38; Type=Story; Summary=Diff push (pn-12); Epic Link=ATLAS-2; Assignee=PN; Story Points=3; Status=In Progress; Created=2026-05-03; Fix Version=Atlas GA"
+EV-FD891985-030,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:32,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 32
+Key=ATLAS-39; Type=Story; Summary=Api docs (rv-1); Epic Link=ATLAS-3; Assignee=RV; Story Points=5; Status=Done; Created=2026-06-25; Resolved=2026-08-19; Fix Version=Atlas GA"
+EV-FD891985-031,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:33,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 33
+Key=ATLAS-40; Type=Story; Summary=Sdk stubs (rv-2); Epic Link=ATLAS-3; Assignee=RV; Story Points=5; Status=To Do; Created=2026-04-22; Fix Version=Atlas GA"
+EV-FD891985-032,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:34,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 34
+Key=ATLAS-41; Type=Story; Summary=Auth scopes (rv-3); Epic Link=ATLAS-3; Assignee=RV; Story Points=5; Status=To Do; Created=2026-06-19; Fix Version=Atlas GA"
+EV-FD891985-033,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:35,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 35
+Key=ATLAS-42; Type=Story; Summary=Rate limits (rv-4); Epic Link=ATLAS-3; Assignee=RV; Story Points=5; Status=To Do; Created=2026-07-03; Fix Version=Atlas GA"
+EV-FD891985-034,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:36,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 36
+Key=ATLAS-43; Type=Story; Summary=Auth scopes (rv-5); Epic Link=ATLAS-3; Assignee=RV; Story Points=2; Status=Done; Created=2026-05-08; Resolved=2026-06-02; Fix Version=Atlas GA"
+EV-FD891985-035,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:37,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 37
+Key=ATLAS-44; Type=Story; Summary=Auth scopes (rv-6); Epic Link=ATLAS-3; Assignee=RV; Story Points=2; Status=Done; Created=2026-07-05; Resolved=2026-07-16; Fix Version=Atlas GA"
+EV-FD891985-036,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:38,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 38
+Key=ATLAS-45; Type=Story; Summary=Api docs (rv-7); Epic Link=ATLAS-3; Assignee=RV; Story Points=2; Status=In Progress; Created=2026-07-08; Fix Version=Atlas GA"
+EV-FD891985-037,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:39,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 39
+Key=ATLAS-46; Type=Story; Summary=Rate limits (rv-8); Epic Link=ATLAS-3; Assignee=RV; Story Points=2; Status=To Do; Created=2026-05-12; Fix Version=Atlas GA"
+EV-FD891985-002,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:4,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 4
+Key=ATLAS-11; Type=Story; Summary=Capacity rules (pn-1); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=Done; Created=2026-05-06; Resolved=2026-05-18; Fix Version=Atlas GA"
+EV-FD891985-038,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:40,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 40
+Key=ATLAS-47; Type=Story; Summary=Api docs (pn-1); Epic Link=ATLAS-3; Assignee=PN; Story Points=3; Status=Done; Created=2026-05-06; Resolved=2026-06-17; Fix Version=Atlas GA"
+EV-FD891985-039,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:41,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 41
+Key=ATLAS-48; Type=Story; Summary=Api docs (pn-2); Epic Link=ATLAS-3; Assignee=PN; Story Points=5; Status=Done; Created=2026-05-21; Resolved=2026-06-28; Fix Version=Atlas GA"
+EV-FD891985-040,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:42,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 42
+Key=ATLAS-49; Type=Story; Summary=Rate limits (pn-3); Epic Link=ATLAS-3; Assignee=PN; Story Points=8; Status=Done; Created=2026-05-13; Resolved=2026-07-08; Fix Version=Atlas GA"
+EV-FD891985-041,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:43,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 43
+Key=ATLAS-50; Type=Story; Summary=Api docs (pn-4); Epic Link=ATLAS-3; Assignee=PN; Story Points=3; Status=Done; Created=2026-05-05; Resolved=2026-06-04; Fix Version=Atlas GA"
+EV-FD891985-042,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:44,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 44
+Key=ATLAS-51; Type=Story; Summary=Settings page (ad-1); Epic Link=ATLAS-4; Assignee=AD; Story Points=5; Status=Done; Created=2026-05-19; Resolved=2026-06-18; Fix Version=Atlas GA"
+EV-FD891985-043,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:45,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 45
+Key=ATLAS-52; Type=Story; Summary=Route editor (ad-2); Epic Link=ATLAS-4; Assignee=AD; Story Points=3; Status=Done; Created=2026-07-19; Resolved=2026-09-07; Fix Version=Atlas GA"
+EV-FD891985-044,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:46,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 46
+Key=ATLAS-53; Type=Story; Summary=Eta badges (ad-3); Epic Link=ATLAS-4; Assignee=AD; Story Points=5; Status=Done; Created=2026-07-04; Resolved=2026-08-30; Fix Version=Atlas GA"
+EV-FD891985-045,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:47,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 47
+Key=ATLAS-54; Type=Story; Summary=Map layer (ad-4); Epic Link=ATLAS-4; Assignee=AD; Story Points=5; Status=To Do; Created=2026-04-12; Fix Version=Atlas GA"
+EV-FD891985-046,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:48,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 48
+Key=ATLAS-55; Type=Story; Summary=Settings page (ad-5); Epic Link=ATLAS-4; Assignee=AD; Story Points=2; Status=Done; Created=2026-05-13; Resolved=2026-06-14; Fix Version=Atlas GA"
+EV-FD891985-047,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:49,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 49
+Key=ATLAS-56; Type=Story; Summary=Settings page (ad-6); Epic Link=ATLAS-4; Assignee=AD; Story Points=5; Status=To Do; Created=2026-07-13; Fix Version=Atlas GA"
+EV-FD891985-003,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:5,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 5
+Key=ATLAS-12; Type=Story; Summary=Graph loader (pn-2); Epic Link=ATLAS-1; Assignee=PN; Story Points=2; Status=Done; Created=2026-06-10; Resolved=2026-07-25; Fix Version=Atlas GA"
+EV-FD891985-048,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:50,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 50
+Key=ATLAS-57; Type=Story; Summary=Map layer (ad-7); Epic Link=ATLAS-4; Assignee=AD; Story Points=5; Status=Done; Created=2026-05-11; Resolved=2026-06-28; Fix Version=Atlas GA"
+EV-FD891985-049,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:51,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 51
+Key=ATLAS-58; Type=Story; Summary=Settings page (ad-8); Epic Link=ATLAS-4; Assignee=AD; Story Points=3; Status=Done; Created=2026-07-25; Resolved=2026-09-17; Fix Version=Atlas GA"
+EV-FD891985-050,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:52,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 52
+Key=ATLAS-59; Type=Story; Summary=Settings page (ad-9); Epic Link=ATLAS-4; Assignee=AD; Story Points=3; Status=Done; Created=2026-06-15; Resolved=2026-06-28; Fix Version=Atlas GA"
+EV-FD891985-051,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:53,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 53
+Key=ATLAS-60; Type=Story; Summary=Settings page (ad-10); Epic Link=ATLAS-4; Assignee=AD; Story Points=3; Status=Done; Created=2026-04-16; Resolved=2026-06-11; Fix Version=Atlas GA"
+EV-FD891985-052,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:54,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 54
+Key=ATLAS-61; Type=Story; Summary=Drag-to-reorder (ad-11); Epic Link=ATLAS-4; Assignee=AD; Story Points=3; Status=Done; Created=2026-05-28; Resolved=2026-07-16; Fix Version=Atlas GA"
+EV-FD891985-053,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:55,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 55
+Key=ATLAS-62; Type=Story; Summary=Map layer (ad-12); Epic Link=ATLAS-4; Assignee=AD; Story Points=5; Status=Done; Created=2026-05-03; Resolved=2026-05-21; Fix Version=Atlas GA"
+EV-FD891985-054,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:56,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 56
+Key=ATLAS-63; Type=Story; Summary=Memory leak fix (sk-1); Epic Link=ATLAS-5; Assignee=SK; Story Points=5; Status=To Do; Created=2026-06-24; Fix Version=Atlas GA"
+EV-FD891985-055,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:57,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 57
+Key=ATLAS-64; Type=Story; Summary=Canary deploy (sk-2); Epic Link=ATLAS-5; Assignee=SK; Story Points=8; Status=To Do; Created=2026-08-01; Fix Version=Atlas GA"
+EV-FD891985-056,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:58,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 58
+Key=ATLAS-65; Type=Story; Summary=P95 latency budget (sk-3); Epic Link=ATLAS-5; Assignee=SK; Story Points=3; Status=To Do; Created=2026-05-27; Fix Version=Atlas GA"
+EV-FD891985-057,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:59,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 59
+Key=ATLAS-66; Type=Story; Summary=Alert tuning (sk-4); Epic Link=ATLAS-5; Assignee=SK; Story Points=2; Status=To Do; Created=2026-07-20; Fix Version=Atlas GA"
+EV-FD891985-004,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:6,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 6
+Key=ATLAS-13; Type=Story; Summary=Multi-stop merge (pn-3); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=Done; Created=2026-05-07; Resolved=2026-06-01; Fix Version=Atlas GA"
+EV-FD891985-058,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:60,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 60
+Key=ATLAS-67; Type=Story; Summary=Alert tuning (pn-1); Epic Link=ATLAS-5; Assignee=PN; Story Points=5; Status=To Do; Created=2026-07-18; Fix Version=Atlas GA"
+EV-FD891985-059,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:61,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 61
+Key=ATLAS-68; Type=Story; Summary=Canary deploy (pn-2); Epic Link=ATLAS-5; Assignee=PN; Story Points=3; Status=In Progress; Created=2026-06-08; Fix Version=Atlas GA"
+EV-FD891985-060,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:62,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 62
+Key=ATLAS-69; Type=Story; Summary=Memory leak fix (pn-3); Epic Link=ATLAS-5; Assignee=PN; Story Points=3; Status=Done; Created=2026-04-16; Resolved=2026-06-08; Fix Version=Atlas GA"
+EV-FD891985-061,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:63,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 63
+Key=ATLAS-70; Type=Story; Summary=Chaos drill (pn-4); Epic Link=ATLAS-5; Assignee=PN; Story Points=8; Status=In Progress; Created=2026-07-06; Fix Version=Atlas GA"
+EV-FD891985-062,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:64,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 64
+Key=ATLAS-71; Type=Story; Summary=P95 latency budget (pn-5); Epic Link=ATLAS-5; Assignee=PN; Story Points=3; Status=Done; Created=2026-07-21; Resolved=2026-08-31; Fix Version=Atlas GA"
+EV-FD891985-063,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:65,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 65
+Key=ATLAS-72; Type=Story; Summary=Chaos drill (pn-6); Epic Link=ATLAS-5; Assignee=PN; Story Points=3; Status=In Progress; Created=2026-07-07; Fix Version=Atlas GA"
+EV-FD891985-005,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:7,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 7
+Key=ATLAS-14; Type=Story; Summary=Turn restrictions (pn-4); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=Done; Created=2026-06-25; Resolved=2026-07-11; Fix Version=Atlas GA"
+EV-FD891985-006,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:8,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 8
+Key=ATLAS-15; Type=Story; Summary=Graph loader (pn-5); Epic Link=ATLAS-1; Assignee=PN; Story Points=2; Status=Done; Created=2026-07-31; Resolved=2026-09-01; Fix Version=Atlas GA"
+EV-FD891985-007,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Issues:row:9,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Issues | Excel row 9
+Key=ATLAS-16; Type=Story; Summary=Cost model (pn-6); Epic Link=ATLAS-1; Assignee=PN; Story Points=3; Status=To Do; Created=2026-05-05; Fix Version=Atlas GA"
+EV-FD891985-070,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Versions:header,2026-11-18T10:00:00+05:30,Workbook Jira_Export_ATLAS.xlsx; sheet Versions; header row 1: Version | Release Date | Original Release Date | Last Changed | Changed By
+EV-FD891985-071,Jira_Export_ATLAS.xlsx,Day3_Wed_18Nov/data_room/engineering/Jira_Export_ATLAS.xlsx,sheet:Versions:row:2,2026-11-18T10:00:00+05:30,"Jira_Export_ATLAS.xlsx | sheet Versions | Excel row 2
+Version=Atlas GA; Release Date=2026-12-15; Original Release Date=2026-09-15; Last Changed=2026-09-02; Changed By=vikram"
+EV-5891AC68-001,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:header,2026-11-18T10:00:00+05:30,Workbook OnCall_Rota.xlsx; sheet On-call; header row 3: Week of | Primary | Secondary
+EV-5891AC68-008,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:10,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 10
+Week of=2026-08-17; Primary=Snehal; Secondary=Sneha"
+EV-5891AC68-009,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:11,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 11
+Week of=2026-08-24; Primary=Sneha; Secondary=Snehal"
+EV-5891AC68-010,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:12,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 12
+Week of=2026-08-31; Primary=Snehal; Secondary=Sneha"
+EV-5891AC68-011,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:13,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 13
+Week of=2026-09-07; Primary=Sneha; Secondary=Snehal"
+EV-5891AC68-012,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:14,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 14
+Week of=2026-09-14; Primary=Snehal; Secondary=Sneha"
+EV-5891AC68-013,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:15,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 15
+Week of=2026-09-21; Primary=Sneha; Secondary=Snehal"
+EV-5891AC68-014,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:16,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 16
+Week of=2026-09-28; Primary=Snehal; Secondary=Sneha"
+EV-5891AC68-015,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:17,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 17
+Week of=2026-10-05; Primary=Sneha; Secondary=Snehal"
+EV-5891AC68-016,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:18,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 18
+Week of=2026-10-12; Primary=Snehal; Secondary=Sneha"
+EV-5891AC68-017,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:19,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 19
+Week of=2026-10-19; Primary=Sneha; Secondary=Snehal"
+EV-5891AC68-018,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:20,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 20
+Week of=2026-10-26; Primary=Snehal; Secondary=Sneha"
+EV-5891AC68-002,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:4,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 4
+Week of=2026-07-06; Primary=Sneha; Secondary=Arjun"
+EV-5891AC68-003,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:5,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 5
+Week of=2026-07-13; Primary=Sneha; Secondary=Priya"
+EV-5891AC68-004,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:6,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 6
+Week of=2026-07-20; Primary=Sneha; Secondary=Arjun"
+EV-5891AC68-005,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:7,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 7
+Week of=2026-07-27; Primary=Sneha; Secondary=Priya"
+EV-5891AC68-006,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:8,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 8
+Week of=2026-08-03; Primary=Sneha; Secondary=Arjun"
+EV-5891AC68-007,OnCall_Rota.xlsx,Day3_Wed_18Nov/data_room/engineering/OnCall_Rota.xlsx,sheet:On-call:row:9,2026-11-18T10:00:00+05:30,"OnCall_Rota.xlsx | sheet On-call | Excel row 9
+Week of=2026-08-10; Primary=Sneha; Secondary=Priya"
+EV-B7B346FE-001,git_log.csv,Day3_Wed_18Nov/data_room/engineering/git_log.csv,summary,2026-11-18T10:00:00+05:30,"git_log.csv summary: 1453 commits from 2025-11-03 to 2026-10-30. Commits by author email: priya.n@veloxa.in=425; arjun@veloxa.in=348; rahul.v@veloxa.in=237; sneha.k@veloxa.in=235; pnair@users.noreply.github.com=163; vikram@veloxa.in=45. Commit counts are activity, not productivity. pnair@users.noreply.github.com is an unresolved alias."
+EV-3E872F52-001,T4_Head_of_Marketing_Call.docx,Day3_Wed_18Nov/transcripts/T4_Head_of_Marketing_Call.docx,document,2026-11-18T10:00:00+05:30,"T4_Head_of_Marketing_Call.docx
+T4 · Head of Marketing call
+Auto-generated summary by MeetNotes AI. Recording 22 min, audio quality: fair (background noise). Speakers: Nikhil B., Speaker 2.
+Summary
+Nikhil calls the September summit ""our best quarter ever for pipeline"". Total marketing spend for the half is ""one point eight"" by his numbers. He thinks finance ""counts things differently"". Paid search is ""going great since Ayesha took over""; LinkedIn is ""a brand play, you can't measure it like leads"".
+Key points
+Team: Nikhil, Ayesha (performance), and ""Sid"", who writes product content. Sid's ""v3 launch kit has been ready since July, just waiting on engineering"".
+Leads tracked in ""Hub Spot""; ads on Google and ""Linked in campaign manager"".
+Summit budget ""went a little over, nothing crazy"".
+Mentions ""Manoj from sales says the summit leads are cold"" and dismisses it.
+Nikhil says marketing will ""report into the new CRO, I hear"" but has no date.
+Action items (auto-detected)
+Send the campaign sheet to finance (owner: Ayesha)
+Backfill Sid's role (owner: unassigned)"
+EV-A50E00C9-001,T5_VP_Engineering_Call.docx,Day3_Wed_18Nov/transcripts/T5_VP_Engineering_Call.docx,document,2026-11-18T10:00:00+05:30,"T5_VP_Engineering_Call.docx
+T5 · VP Engineering call
+Auto-generated summary by MeetNotes AI. Recording 19 min, audio quality: fair. Speakers: Vikram M., Ananya R. Transcript cuts out for ~4 min at 11:20.
+Summary
+Vikram says v3 is ""on track, maybe a couple of weeks of buffer needed"". Board date is ""still September-ish"". Main blocker is ""incidents in August that pulled Snehal off"". He disputes that anyone is overloaded: ""everyone's busy, that's startups"".
+Key points
+Team: Pria (routing lead), Arjun (frontend, ""remote from Pune now, reviews are slower""), Snehal on SRE and on-call, Rahul (""joined Feb, ramping well""). Mentions ""Sneha"" once later; unclear if same person.
+Tickets on ""the Jeera board, we tried Linear for a month and went back"". Incidents through ""pager duty"".
+""We asked for two backend people and finance froze it.""
+[audio gap 11:20 to 15:30]
+Says ""Pria has been doing late nights but she likes it"".
+Action items (auto-detected)
+Share the v3 burndown (owner: Vikram)
+Postmortems for the August incidents on Con fluence (owner: Snehal)"
+EV-86CFCCFA-001,T6b_CEO_Voice_Note.docx,Day3_Wed_18Nov/transcripts/T6b_CEO_Voice_Note.docx,document,2026-11-18T10:00:00+05:30,"T6b_CEO_Voice_Note.docx
+T6b · CEO voice note
+Auto-transcribed WhatsApp voice notes forwarded by Ananya's assistant.
+""So, marketing will report to the new CRO from next month. Or the month after, still finalising. Make sure the thing doesn't break when we move people around."""
+EV-67D83B0F-001,T6c_CEO_Voice_Note.docx,Day4_Thu_19Nov/transcripts/T6c_CEO_Voice_Note.docx,document,2026-11-19T10:00:00+05:30,"T6c_CEO_Voice_Note.docx
+T6c · CEO voice note
+Auto-transcribed WhatsApp voice notes forwarded by Ananya's assistant.
+""Can you make a list of everyone ranked by who's likely to quit? And show me their slag messages so I can see what they're saying. Deepa says it's fine."""
+EV-2E0047A2-001,T6d_CEO_Voice_Note.docx,Day4_Thu_19Nov/transcripts/T6d_CEO_Voice_Note.docx,document,2026-11-19T10:00:00+05:30,"T6d_CEO_Voice_Note.docx
+T6d · CEO voice note
+Auto-transcribed WhatsApp voice notes forwarded by Ananya's assistant.
+""Bad news, Pria resigned this morning. Notice period two months, I think. What does this do to version three? I need to know before the board call."""
